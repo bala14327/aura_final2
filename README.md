@@ -1,0 +1,22 @@
+# AURA Frontend — GitHub Pages
+
+## Publish
+This is a static HTML/CSS/JavaScript site. Keep `index.html`, `css/`, `js/`, and `assets/` directly in the repository root. Do not upload the whole project folder as a nested folder.
+
+1. Upload the **contents** of this folder to the root of your GitHub repository.
+2. Keep `.github/workflows/pages.yml` in place.
+3. In GitHub, open **Settings → Pages** and select **GitHub Actions** as the build/deployment source.
+4. Push to the `main` branch (or use **Actions → Deploy AURA to GitHub Pages → Run workflow**).
+5. Open the URL shown in the successful `deploy` job.
+
+## Local preview
+Open the folder in VS Code and use Live Server on `index.html`.
+
+## Demo account behavior
+Registration/login use browser `localStorage` only. Browser storage is isolated by origin, so an account created on `localhost` does not exist on the GitHub Pages domain. Register again on the deployed site when testing.
+
+This localStorage login is for a frontend demonstration only. It stores demo credentials in the browser and is not secure production authentication. GitHub Pages cannot run backend APIs, databases, or server-side authentication. A real deployment needs a separately hosted backend/auth provider.
+
+## Troubleshooting
+- If the root URL returns 404, confirm `index.html` is at the repository root and Pages is configured to use GitHub Actions.
+- If the site is under a repository path, keep all local links and asset paths relative (for example `css/base.css`, not `/css/base.css`).
